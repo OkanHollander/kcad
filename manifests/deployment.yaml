@@ -20,6 +20,10 @@ spec:
       labels:
         app:  MYAPP
     spec:
+      securityContext:
+        runAsGroup: 30000
+        runAsUser: 10000
+        fsGroup: 20000
       containers:
       - name:  nginx
         image:  nginx:1.20
