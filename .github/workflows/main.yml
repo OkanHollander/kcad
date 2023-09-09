@@ -24,4 +24,5 @@ jobs:
           wget https://github.com/zegl/kube-score/releases/download/v1.17.0/kube-score_1.17.0_linux_amd64
           chmod +x kube-score_1.17.0_linux_amd64
           mv kube-score_1.17.0_linux_amd64 kubescore
-          ./kubescore
+      - name: Run Kubescore
+        run: ./kubescore score manifest
