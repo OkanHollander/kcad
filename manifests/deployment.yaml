@@ -22,8 +22,6 @@ spec:
     spec:
       securityContext:
         runAsUser: 10000
-        runAsGroup: 20000
-        fsGroup: 30000
       containers:
       - name:  nginx
         image:  nginx:1.20
