@@ -4,7 +4,7 @@ metadata:
   name: "nginx100"
 spec:
   containers:
-  - name: Webserver
+  - name: webserver
     image: "nginx:1.25-alpine"
     resources:
       limits:
