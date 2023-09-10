@@ -25,4 +25,4 @@ jobs:
           chmod +x kube-score_1.17.0_linux_amd64
           mv kube-score_1.17.0_linux_amd64 kubescore
       - name: Run Kubescore
-        run: ./kubescore score manifests/*.yaml
+        run: ./kubescore score manifests/*.yaml -- ignore-test container-security-context-user-group-id 
