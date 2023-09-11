@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "nginx200"
+  name: "configmap-demo-pod"
   namespace: configmaps
+  labels:
+    app: "configmap-demo-pod"
 spec:
   containers:
-  - name: nginx200
-    image: "ubuntu:latest"
-    command: ["sleep", "5"]
+  - name: configmap-demo-pod
+    image: "alpine"
     resources:
       limits:
         cpu: 200m
@@ -16,13 +17,19 @@ spec:
         cpu: 100m
         memory: 200Mi
     env:
-    - name: db_host
+    - name: employee01
       valueFrom:
         configMapKeyRef:
-          name: myapp
-          key: db_01
-          optional: true
-    ports:
-    - containerPort:  80
-      name:  http
+          name: cbtnuggets
+          key: employee01
+    - name: employee02
+      valueFrom:
+        configMapKeyRef:
+          name: cbtnuggets
+          key: employee02
+    - name: employee03
+      valueFrom:
+        configMapKeyRef:
+          name: cbtnuggets
+          key: employee03
   restartPolicy: Always
